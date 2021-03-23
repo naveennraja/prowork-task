@@ -35,7 +35,7 @@ const AddUserFormController = (callback, validation) => {
       }
       callback();
     }
-  }, [errors, callback, isSubmitting, values]);
+  }, [errors, isSubmitting, values]);
 
   return { onHandleChange, onSubmitHandler, values, errors };
 };
