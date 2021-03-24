@@ -33,7 +33,6 @@ const CardComponent = ({ data }) => {
           </ul>
           <p className='card-text text-truncate' style={{ maxWidth: '350px' }}>
             <i className='fas fa-info-circle mr-2 text-primary'></i>
-
             <strong>Description: </strong>
             {data.description}
           </p>

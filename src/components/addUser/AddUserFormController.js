@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
-
+const initialVal = {
+  firstName: '',
+  lastName: '',
+  gender: '',
+  age: '',
+  address: '',
+  description: ''
+};
 const AddUserFormController = (callback, validation) => {
-  const [values, setValues] = useState({
-    firstName: '',
-    lastName: '',
-    gender: '',
-    age: '',
-    address: '',
-    description: ''
-  });
+  const [values, setValues] = useState(initialVal);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -34,8 +34,9 @@ const AddUserFormController = (callback, validation) => {
         localStorage.setItem('ProworkUsers', JSON.stringify([values]));
       }
       callback();
+      setValues(initialVal);
     }
-  }, [errors, isSubmitting, values]);
+  }, [errors]);
 
   return { onHandleChange, onSubmitHandler, values, errors };
 };
